@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+notify-send --icon=info "$(xsel -o)" "$(venv/bin/python3 /home/<<user>>/transp.py $(xsel -o))"

@@ -1,2 +1,12 @@
 #!/usr/bin/env bash
-notify-send --icon=info "$(xsel -o)" "$(location-env location-trans.py $(xsel -o))"
+
+
+while true; do
+    current_selection="$(xsel -o)"
+    if [[ "$current_selection" != "$previous_selection" ]]; then
+        # Run your translation script here
+        notify-send --icon=info "$(xsel -o)" "$(python3 /home/majid/transp.py $>
+        previous_selection="$current_selection"
+    fi
+    sleep 1
+done
